@@ -1,0 +1,447 @@
+/* for front-end and view & use form display */
+
+@media print{
+	button,input,select{font-size:1em;}
+}
+
+/* set max width on inputs so they don't expand past their containers*/
+.elementBody > input {
+	max-width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6{ line-height:1em; }
+
+.prevPage, .nextPage, .submitBtn, .userConfirmation, .hydraulics, #recurringPaymentSection{display:none;}
+
+.pageControls, .saveForLaterPanel{padding:1.5em 0 0 1em; clear:both;}
+
+.formPageDesc, .alertMsg, .debugRow, #debugConsole, .userNote {
+	border-color: #3f6c4a;
+	border-width: 1px;
+	border-style: dashed;
+	margin: .5em;
+}
+
+div#debugConsole {
+	display:none;
+	width: 400px;
+	float: left;
+	height: auto;
+	overflow-y: hidden;
+}
+
+div.saveForLaterEmail{
+	display:none;
+}
+
+fieldset{
+	border: 0pt none ;
+}
+
+.targetForm{
+	min-height:35px;
+}
+
+.elementRow{
+	clear:both;
+	margin:.5em 0;
+}
+
+.elementColumn{ float:left; margin-right:.5em; }
+
+.elementContainer{
+	position:relative;
+	padding:.5em;
+	float:left;
+	width:95%;
+}
+
+div.groupLabel{  }
+div.descText{ color:#666; }
+
+.elementContainer label{ display:block; }
+
+/*horizontally aligned checkboxes/radio buttons*/
+label.horizontal{display:inline-block; white-space:nowrap;}
+
+/* Left aligned labels */
+
+.labelLeft .elementContainer label, .labelLeft .elementContainer .groupLabel{ margin-right:1%; width:19%; float:left; text-align:right; *margin-right:0.5em; }
+.labelLeft .elementContainer .groupLabel label{ width:auto; }
+.labelLeft .labelXtra{ display:block; }
+.labelLeft .elementBody{ float:left; width:79%; margin-left:1%; }
+.labelLeft .elementContainer input{ display:block; }
+
+.labelLeft .elementContainer fieldset label{ width:auto; text-align:left; float:none; } /*checkbox/radio fieldsets should obey element controls*/
+.labelLeft .elementContainer fieldset input{ display:inline !important; float:none !important; }
+
+/*column treatment*/
+.labelLeft .elementColumn .elementContainer label, .labelLeft .elementColumn .elementContainer .groupLabel{ width:auto; } /*labels in columns only float left if there is room*/
+
+
+/* Tooltips */
+.toolTip{color:#666;display:block;}
+
+/* Top Label + Right aligned tooltips */
+.toolTipRight .toolTip{ display:inline; }
+.toolTipRight fieldset{ display:inline; }
+
+/*Left aligned labels plus tooltip align right*/
+.labelLeft.toolTipRight .toolTip{ display:block; float:left; }
+.labelLeft.toolTipRight .elementContainer input,
+.labelLeft.toolTipRight .elementContainer textarea,
+.labelLeft.toolTipRight .elementContainer select{ display:block; float:left; margin-right:.5em; }
+.labelLeft.toolTipRight .elementContainer fieldset{ display:block; float:left; width:auto; }
+
+/*Show tooltips on mouseover*/
+.toolTipHover .toolTip{ display:none; padding:.5em; background:#ffee66; position:absolute; z-index:99999; }
+
+/* This has been moved to a JS function to be compatible with older browsers */
+/*.toolTipHover .elementContainer:hover .toolTip{ display:block; }*/
+
+.pageControls{padding:1em 0 0 .75em;border-top:1px solid #ccc;}
+
+.userConfirmation{ margin:.5em 0 2em 0; }
+.userConfirmationEmail{ margin-left:2em; }
+
+.valFail{background-color:#F2DEDE; border:1px solid #EED3D7;}
+
+/*label.required:after {
+	content: '*';
+	display:inline;
+}*/
+
+.autoclear:after{content:".";display:block;height:0;font-size:0;clear:both;visibility:hidden}
+.autoclear{display:inline-block}
+* html .autoclear{height:1px}
+.autoclear{display:block}
+
+.formPage  {
+	margin-bottom: 2em;
+	display:none;
+}
+
+.formPage.showFormPage {
+	display: block;
+}
+
+/* Recurring Payment */
+
+input.showTotals.recurrencyChargeInput, input.recurrencyChargeInput{
+    border-radius:3px;
+    border:0;
+    -webkit-box-shadow:inset 0 0 4px #666;
+    box-shadow:inset 0 0 4px #666;
+    padding:5px;
+    background:#2687b5;
+    color:#d8eaf2;
+    -webkit-text-fill-color: #d8eaf2;
+    width: 5.5em;
+}
+
+.submitBtn{
+    color: #FFF;
+	background-color: #363636;
+	padding: 10px 20px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border: 0;
+	cursor: pointer;
+	font-size: inherit;
+}
+
+.cancelSubscription{
+    background:#eee;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    padding:.5em;
+    margin-top:1em;
+}
+
+.userConfirmation .userConfirmationEmail{
+    margin-left:0;
+}
+
+span.reg {
+	margin: 4px;
+}
+span.reg.cps {
+	color: slategray;
+}
+span.reg.chg {
+	color: black;
+	font-weight: bold;
+}
+span.reg.full {
+	font-weight: bold;
+	background: rgba(255, 0, 0, 0.1);
+	border: 1px solid #EED3D7;
+	padding: 3px 5px;
+	width: auto;
+	color: #BE4F4F;
+}
+
+span.reg.full,
+span.reg.waitlist {
+	display: block;
+	clear: both;
+	border-radius: 3px;
+}
+
+span.reg.waitlist {
+	padding: 3px 7px;
+	display: inline-block;
+	background-color: rgba(255, 247, 127, 0.5);
+}
+
+.adminViewEnter form.disableEnter.cf_form span.reg.waitlist input {
+	margin-top: 0;
+}
+
+input.full,
+select.full,
+fieldset.full,
+span.counter.full {
+	display: none;
+}
+
+span.attendeeInfo {
+	border-top: 1px solid #E8E6E6;
+	display: inline-block;
+	width: 95%;
+	padding-top: 12px;
+}
+
+span.attendeeInfo .lbl {
+	clear: both;
+	display: block;
+	color: #999;
+}
+
+span.attendeeInfo label {
+	margin: 6px 0;
+}
+
+span.attendeeInfo .nf,
+span.attendeeInfo .nl,
+span.attendeeInfo .e {
+	width: 85px;
+}
+
+span.attendeeInfo .nfl {
+	width: 170px;
+}
+div.wlShow {
+	display: block !important;
+}
+
+/* Input styling */
+.pageContentWrapper input[type=text],
+.adminViewEnter input[type=text],
+.pageContentWrapper input[type=search],
+.adminViewEnter input[type=search],
+.pageContentWrapper textarea,
+.adminViewEnter textarea,
+.pageContentWrapper input[type=password],
+.adminViewEnter input[type=password] {
+  border: 1px solid #BBB;
+  outline: none;
+  padding: .2em .5em;
+  min-height: 18px;
+}
+.pageContentWrapper input[type=text]:focus,
+.adminViewEnter input[type=text]:focus,
+.pageContentWrapper input[type=search]:focus,
+.adminViewEnter input[type=search]:focus,
+.pageContentWrapper textarea:focus,
+.adminViewEnter textarea:focus,
+.pageContentWrapper input[type=password]:focus,
+.adminViewEnter input[type=password]:focus,
+.pageContentWrapper input[type=text]:focus:hover,
+.adminViewEnter input[type=text]:focus:hover,
+.pageContentWrapper textarea:focus:hover,
+.adminViewEnter textarea:focus:hover,
+.pageContentWrapper input[type=password]:focus:hover,
+.adminViewEnter input[type=password]:focus:hover {
+  border-color: #1071D1;
+  box-shadow: 0 0 3px #98C0EB;
+}
+.pageContentWrapper input[disabled="true"],
+.adminViewEnter input[disabled="true"],
+.pageContentWrapper input:disabled,
+.adminViewEnter input:disabled {
+  border: 1px solid #DDD !important;
+  color: #999;
+  border: 2px inset !important;
+}
+.pageContentWrapper input[type=text]:not(disabled):hover,
+.adminViewEnter input[type=text]:not(disabled):hover,
+.pageContentWrapper input[type=search]:not(disabled):hover,
+.adminViewEnter input[type=search]:not(disabled):hover,
+.pageContentWrapper textarea:not(disabled):hover,
+.adminViewEnter textarea:not(disabled):hover,
+.pageContentWrapper input[type=password]:not(disabled):hover,
+.adminViewEnter input[type=password]:not(disabled):hover {
+  border-color: #ACD0F3;
+}
+
+/* View & Enter Tab */
+.adminViewEnter form.disableEnter.cf_form {
+	font-size: 12px;
+}
+
+.adminViewEnter form.disableEnter.cf_form .mainGroupSub.targetForm {
+	min-width: 300px;
+	padding: 1.2% 1.5%;
+	width: 50%;
+}
+
+.adminViewEnter form.disableEnter.cf_form label {
+	text-shadow: 0px 1px 0px #F7F6F6;
+	margin-bottom: 9px;
+	color: #222;
+	margin-left: 4px;
+	font-weight: bold;
+}
+
+form.disableEnter.cf_form select {
+	max-width: 200px;
+}
+
+.adminViewEnter form.disableEnter.cf_form select {
+	min-height: 30px;
+}
+
+.adminViewEnter form.disableEnter.cf_form span.counter * {
+	color: #2B90FD;
+	outline: none;
+}
+
+form.disableEnter.cf_form span.counter span {
+	font-weight: bold;
+	padding: 2px 6px 1px;
+	border-radius: 3px;
+	margin: 0 3px;
+}
+
+.adminViewEnter form.disableEnter.cf_form .counter {
+	margin-left: 4px;
+}
+
+form.disableEnter.cf_form .counter {
+	display: block;
+	margin-bottom: 8px;
+}
+
+.adminViewEnter form.disableEnter.cf_form span.counter button {
+	background: rgba(43, 144, 253, 0.2);
+	margin-top: -2px;
+}
+
+form.disableEnter.cf_form span.counter button {
+	background: rgba(189, 189, 189, 0.2);
+    color: #777;
+    border: 0;
+    font-size: 16px;
+    padding: 0 .4em .2em .4em;
+    text-shadow: none;
+    margin: 0;
+    margin-top: 2px;
+    vertical-align: top;
+    color: #777;
+}
+
+.adminViewEnter form.disableEnter.cf_form span.counter button:hover {
+	background: rgb(43, 144, 253);
+}
+
+form.disableEnter.cf_form span.counter button:hover {
+	background: rgb(119, 119, 119);
+	color: #FFF;
+}
+
+.adminViewEnter form.disableEnter.cf_form .submitBtn {
+	padding: 7px 14px;
+	outline: 0;
+}
+
+.adminViewEnter form.disableEnter.cf_form .submitBtn:hover {
+	background-color: #348F4F;
+}
+
+.adminViewEnter form.disableEnter.cf_form .pageControls {
+	padding-left: 0;
+}
+
+.shareAttendees {
+	background: #D8D8D8;
+	display: inline-block;
+	margin: 10px 0 0 20px;
+	padding: 5px 10px;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.shareAttendees:hover {
+	background: #BBB;
+}
+
+.adminViewEnter form.disableEnter.cf_form input[type="text"] {
+	margin-top: 5px;
+}
+
+.adminViewEnter form.disableEnter.cf_form span.reg.cps,
+.adminViewEnter form.disableEnter.cf_form span.reg.chg {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0;;
+}
+
+.adminViewEnter form.disableEnter.cf_form select + span.reg.chg {
+	margin-top: 7px;
+	margin-left: 8px;
+}
+
+.adminViewEnter form.disableEnter.cf_form .formPage {
+  margin-bottom: 1em;
+}
+
+.rsvpListModal.ui-widget-content {
+	border: 1px solid #EEE;
+	font-family: Lucida Grande, Arial, Helvetica, sans-serif;
+	font-size: 1em;
+}
+
+.rsvpListModal .ui-widget-header {
+	background: #EEE;
+	border: 1px solid #EEE;
+}
+
+.rsvpListModal .ui-dialog-titlebar-close {
+	background: transparent;
+	border-color: transparent !important;
+}
+
+.rsvpListModal .ui-dialog-titlebar-close.ui-state-hover {
+	background: #DADADA !important;
+	border: 1px solid #DADADA !important;
+}
+div.attValFailMsg {
+	background-color: #E85D5D;
+	clear: both;
+	color: #FFF;
+	display: block;
+	padding: 5px;
+}
+
+div#ui-datepicker-div { display: none; }
+
+a.checkoutButton {
+	background: rgb(28, 184, 65);
+	border: transparent;
+	border-radius: 2px;
+	color: white;
+	display: inline-block;
+	padding: .5em 1em;
+	text-decoration: none;
+}

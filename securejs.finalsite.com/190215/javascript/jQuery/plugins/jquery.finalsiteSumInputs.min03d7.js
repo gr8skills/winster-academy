@@ -1,0 +1,1 @@
+!function($){"use strict";jQuery.fn.sumValues||(jQuery.fn.sumValues=function(){var e=0;return this.each(function(){var s=jQuery(this);s.is("select")&&(s=s.find(":selected"));var a=s.data("price");isNaN(a)&&s.is(":input")?a=s.val():isNaN(a)&&(a=s.text()),a=parseFloat((" "+Number(a)).replace(/[^0-9-\.]/g,""),10),isNaN(a)&&(a=0),e+=a}),e})}(jQuery);

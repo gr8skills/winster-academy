@@ -1,0 +1,30 @@
+span.nsInputDisplay {
+	width: 2em;
+	border: 0;
+	background: transparent;
+	text-align: center;
+	font: 16px gesta, arial, sans-serif;
+}
+
+button.nsMinus, button.nsPlus {
+	line-height:1;
+	background-color:#ccc;
+	background-repeat:no-repeat;
+	background-image:-moz-linear-gradient(#f5f5f5, #CCC);
+	background-image:-ms-linear-gradient(top, #f5f5f5, #CCC);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#CCC));
+	background-image:-webkit-linear-gradient(#f5f5f5, #CCC);
+	background-image:linear-gradient(top, #f5f5f5, #CCC);
+	border-radius: 4px;
+	border:1px solid #ccc;
+	padding:0 .2em .2em .2em;
+	text-shadow: 0 1px 0 #f5f5f5;
+	color:#555;
+	cursor:pointer;
+}
+
+button.nsMinus:hover, button.nsPlus:hover {
+	background:#dadada;
+}
+
+
